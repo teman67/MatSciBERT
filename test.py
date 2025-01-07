@@ -1,9 +1,9 @@
 import torch
 from normalize_text import normalize
-from transformers import AutoModel, AutoTokenizer
+from transformers import AutoModel, AutoTokenizer, BertForMaskedLM
 
 tokenizer = AutoTokenizer.from_pretrained('m3rg-iitd/matscibert')
-model = AutoModel.from_pretrained('m3rg-iitd/matscibert')
+model = BertForMaskedLM.from_pretrained('m3rg-iitd/matscibert')
 
 sentences = ['SiO2 is a network former.']
 norm_sents = [normalize(s) for s in sentences]
